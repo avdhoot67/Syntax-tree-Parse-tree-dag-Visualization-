@@ -20,13 +20,13 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/5"
+      className="sticky top-0 z-50 w-full border-b border-white/5"
       style={{
         background: 'rgba(10, 10, 15, 0.8)',
         backdropFilter: 'blur(20px)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative">
@@ -42,7 +42,7 @@ export default function Navbar() {
         </Link>
 
         {/* Nav Links */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-4 sm:gap-6">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             const Icon = link.icon;
@@ -50,16 +50,16 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                className={`group relative px-8 py-4 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2.5 ${
                   isActive
                     ? 'text-cyan-400'
-                    : 'text-white/50 hover:text-white/80'
+                    : 'text-white/50 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="navbar-active"
-                    className="absolute inset-0 rounded-lg bg-cyan-500/10 border border-cyan-500/20"
+                    className="absolute inset-0 rounded-full bg-cyan-500/10 border border-cyan-500/20"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}

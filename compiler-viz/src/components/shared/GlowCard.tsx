@@ -32,7 +32,7 @@ export default function GlowCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       className={cn(
-        'glass-card p-6 transition-all duration-500',
+        'glass-card p-12 md:p-16 flex flex-col transition-all duration-500',
         hover && glowColors[glowColor],
         className
       )}

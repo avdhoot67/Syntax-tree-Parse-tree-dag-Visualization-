@@ -129,8 +129,8 @@ export default function AnalyzerPage() {
       <ParticleBackground />
       <Navbar />
 
-      <div className="relative z-10 pt-20 pb-12 px-4 md:px-6">
-        <div className="max-w-[1600px] mx-auto">
+      <div className="relative z-10 pt-10 pb-24 px-4 md:px-8">
+        <div className="w-full max-w-[1600px] mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ export default function AnalyzerPage() {
               className="lg:col-span-4 space-y-4"
             >
               {/* Editor Card */}
-              <div className="glass-card p-4">
+              <div className="glass-card p-6 md:p-8">
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-sm font-semibold text-white/60 uppercase tracking-wider">Expression Input</h2>
                   <div className="relative">
@@ -229,14 +229,14 @@ export default function AnalyzerPage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="glass-card p-4">
+              <div className="glass-card p-6 md:p-8 mt-6">
                 <h2 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-3">Actions</h2>
 
                 {/* Analyze All */}
                 <button
                   onClick={handleAnalyzeAll}
                   disabled={loading}
-                  className="w-full mb-3 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-white font-semibold text-sm transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,212,255,0.25)] hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full mb-4 px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-white font-bold text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.3)] hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -259,7 +259,7 @@ export default function AnalyzerPage() {
                       key={btn.label}
                       onClick={btn.handler}
                       disabled={loading}
-                      className="px-3 py-2.5 rounded-lg border border-white/5 bg-white/[0.02] text-white/60 text-xs font-medium hover:text-white hover:bg-white/[0.05] hover:border-white/10 transition-all disabled:opacity-50 flex items-center justify-center gap-1.5"
+                      className="px-4 py-3 rounded-lg border border-white/5 bg-white/[0.02] text-white/60 text-xs font-medium hover:text-white hover:bg-white/[0.05] hover:border-white/10 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                       <btn.icon className="w-3.5 h-3.5" />
                       {btn.label}
@@ -294,7 +294,7 @@ export default function AnalyzerPage() {
               transition={{ delay: 0.2 }}
               className="lg:col-span-8"
             >
-              <div className="glass-card p-4">
+              <div className="glass-card p-6 md:p-8 min-h-full">
                 {/* Tab Bar */}
                 <div className="flex gap-1 p-1 rounded-xl bg-white/[0.02] border border-white/5 mb-4 overflow-x-auto">
                   {tabs.map((tab) => {
@@ -304,8 +304,8 @@ export default function AnalyzerPage() {
                       <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`relative flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-                          isActive ? 'text-white' : 'text-white/35 hover:text-white/60'
+                        className={`relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                          isActive ? 'text-white' : 'text-white/40 hover:text-white/80'
                         }`}
                       >
                         {isActive && (

@@ -70,8 +70,8 @@ export default function AboutPage() {
       <ParticleBackground />
       <Navbar />
 
-      <div className="relative z-10 pt-24 pb-12 px-6">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 pt-24 pb-48 px-6 md:px-12">
+        <div className="w-full max-w-[1600px] mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,11 +82,11 @@ export default function AboutPage() {
               <Info className="w-4 h-4" />
               Educational Reference
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 mt-4">
               Understanding the{' '}
               <span className="gradient-text">Compiler Pipeline</span>
             </h1>
-            <p className="text-white/40 text-lg max-w-2xl mx-auto">
+            <p className="text-white/40 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
               This application demonstrates the front-end phases of a compiler — from raw text to optimized intermediate code. Each phase transforms the representation closer to machine-executable form.
             </p>
           </motion.div>
@@ -96,20 +96,22 @@ export default function AboutPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-32 max-w-6xl mx-auto"
           >
-            <div className="glass-card p-6 overflow-x-auto">
-              <div className="flex items-center justify-between min-w-[600px]">
+            <div className="glass-card p-12 overflow-x-auto">
+              <div className="flex items-center justify-center min-w-[800px] w-full gap-2 md:gap-6">
                 {['Source', 'Tokens', 'Parse Tree', 'AST', 'DAG', 'TAC', 'Optimized'].map((step, i) => (
                   <div key={step} className="flex items-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center mx-auto mb-2">
-                        <span className="text-xs font-bold text-cyan-400">{i + 1}</span>
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center mb-4">
+                        <span className="text-sm font-bold text-cyan-400">{i + 1}</span>
                       </div>
-                      <span className="text-xs text-white/40">{step}</span>
+                      <span className="text-sm font-medium text-white/50">{step}</span>
                     </div>
                     {i < 6 && (
-                      <ArrowRight className="w-4 h-4 text-white/10 mx-2" />
+                      <div className="px-2 md:px-4">
+                        <ArrowRight className="w-6 h-6 text-white/20" />
+                      </div>
                     )}
                   </div>
                 ))}
@@ -118,21 +120,21 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Phase Details */}
-          <div className="space-y-6">
+          <div className="space-y-16 mt-24">
             {phases.map((phase, i) => (
               <GlowCard key={phase.title} glowColor={phase.glowColor} delay={i * 0.1}>
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-12 text-center md:text-left w-full">
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${phase.color} flex items-center justify-center flex-shrink-0`}
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center flex-shrink-0 shadow-lg`}
                   >
-                    <phase.icon className="w-6 h-6 text-white" />
+                    <phase.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2">{phase.title}</h3>
-                    <p className="text-white/45 text-sm leading-relaxed mb-3">
+                  <div className="flex-1 w-full max-w-5xl my-4">
+                    <h3 className="text-2xl font-bold text-white mb-4">{phase.title}</h3>
+                    <p className="text-white/50 text-lg leading-relaxed mb-6 max-w-[1200px]">
                       {phase.description}
                     </p>
-                    <div className="px-3 py-2 rounded-lg bg-white/[0.03] border border-white/5 font-mono text-xs text-cyan-300/60">
+                    <div className="inline-block px-8 py-5 rounded-2xl bg-white/[0.03] border border-white/5 font-mono text-sm text-cyan-300/80 text-left w-full md:w-auto overflow-x-auto mt-2">
                       {phase.example}
                     </div>
                   </div>
@@ -146,14 +148,14 @@ export default function AboutPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-16"
+            className="text-center mt-32"
           >
             <Link
               href="/analyzer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-white font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.3)] hover:scale-[1.02]"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-white font-bold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] hover:scale-[1.02]"
             >
               Try It Yourself
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </motion.div>
         </div>
