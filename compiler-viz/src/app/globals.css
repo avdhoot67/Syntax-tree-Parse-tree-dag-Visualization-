@@ -1,0 +1,218 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --neon-blue: #00d4ff;
+  --neon-cyan: #00ffd5;
+  --neon-purple: #a855f7;
+  --neon-emerald: #34d399;
+  --neon-pink: #f472b6;
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: rgba(17, 17, 24, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f0f0f5;
+  --text-secondary: #8888a0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 160, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(136, 136, 160, 0.5);
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+}
+
+/* Neon Glow */
+.neon-glow-blue {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), 0 0 45px rgba(0, 212, 255, 0.1);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3), 0 0 45px rgba(168, 85, 247, 0.1);
+}
+
+.neon-glow-emerald {
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.3), 0 0 45px rgba(52, 211, 153, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 50%, var(--neon-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Background Grid */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Animated Background Gradient */
+.animated-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 100%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+}
+
+/* Pulse animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Node styling for React Flow */
+.react-flow__node {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.react-flow__background {
+  background: transparent !important;
+}
+
+.react-flow__controls {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-secondary) !important;
+}
+
+.react-flow__controls-button {
+  background: var(--bg-secondary) !important;
+  border-color: var(--glass-border) !important;
+  color: var(--text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background: rgba(0, 212, 255, 0.1) !important;
+  color: var(--neon-blue) !important;
+}
+
+/* Monaco Editor overrides */
+.monaco-editor {
+  border-radius: 12px !important;
+}
+
+/* Tab transitions */
+.tab-content {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Code block styling */
+.code-block {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  overflow-x: auto;
+}
+
+/* Token type colors */
+.token-identifier { color: #7dd3fc; }
+.token-number { color: #fbbf24; }
+.token-operator { color: #f472b6; }
+.token-assign { color: #a78bfa; }
+.token-paren { color: #6ee7b7; }
+.token-eof { color: #64748b; }
+
+/* Animated border */
+@keyframes border-rotate {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animated-border {
+  border: 2px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: border-rotate 4s linear infinite;
+}
