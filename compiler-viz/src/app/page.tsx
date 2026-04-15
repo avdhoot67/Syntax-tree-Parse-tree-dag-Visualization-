@@ -79,7 +79,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* ==================== HERO ==================== */}
-      <section className="relative min-h-[calc(100vh-80px)] w-full flex flex-col justify-center pt-24 pb-48 px-6 md:px-12">
+      <section className="relative min-h-[calc(100vh-80px)] w-full flex flex-col justify-center items-center py-32 md:py-40 px-6 md:px-12">
         <div className="absolute inset-0 animated-bg" />
         <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center text-center">
           {/* Badge */}
@@ -191,7 +191,7 @@ export default function LandingPage() {
             <h2 className="text-4xl md:text-5xl font-bold my-6">
               <span className="gradient-text">Compiler Phases</span> Visualized
             </h2>
-            <p className="text-white/40 text-xl max-w-xl mx-auto my-8">
+            <p className="text-white/40 text-xl my-8">
               Every stage of compilation — from raw text to optimized intermediate code — beautifully rendered.
             </p>
           </motion.div>

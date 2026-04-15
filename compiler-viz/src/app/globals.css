@@ -18,8 +18,11 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 6px;
   box-sizing: border-box;
+}
+nav, nav * {
+  padding: 0 !important;
 }
 
 html {
