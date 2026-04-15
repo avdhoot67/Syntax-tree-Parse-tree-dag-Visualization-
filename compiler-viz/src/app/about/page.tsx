@@ -110,7 +110,7 @@ export default function AboutPage() {
                     </div>
                     {i < 6 && (
                       <div className="px-2 md:px-4">
-                        <ArrowRight className="w-6 h-6 text-white/20" />
+                        <ArrowRight className="w-10 h-10 text-white/20" />
                       </div>
                     )}
                   </div>
